@@ -19,9 +19,10 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        cache: maven
 
     - name: Build with Maven
-      run: mvn clean package
+      run: mvn -B package --file pom.xml
 
     - name: Upload JAR artifact
       uses: actions/upload-artifact@v3
